@@ -13,5 +13,5 @@ jobs:
           GITHUB_SHA: ${{ github.sha }}
           GITHUB_OWNER: 'bryan-nice'
           GITHUB_REPOSITORY: 'github-issue-creation'
-          GITHUB_ISSUE_TITLE: 'Demo''ing Git Issue Creation'
-          GITHUB_ISSUE_BODY: 'Demo''ing Git Issue Creation'
+          GITHUB_ISSUE_TITLE: 'Demo Git Issue Creation'
+          GITHUB_ISSUE_BODY: 'Demo Git Issue Creation'
