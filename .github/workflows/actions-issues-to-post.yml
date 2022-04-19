@@ -1,4 +1,4 @@
-name: manage issues post
+name: Manage Issue Request
 on:
   issues:
     types: [opened, edited]
