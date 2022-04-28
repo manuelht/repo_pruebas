@@ -1,16 +1,19 @@
 
-name: On Pull Request
+name: On Pull Request Validate
 on:
   pull_request:
     branches:    
       - 'master'
 jobs:
   check-actions:
-    name: Check actions
+    name: Validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
         with:
-          python-version: '3.x'
-      - run: python pruebas.py     
+          python-version: '3.9'
+          cache: 'pip'
+      - run: |
+          pip install -r requirements.txt
+          python validate_properties.py properties/test-pipeline.properties
