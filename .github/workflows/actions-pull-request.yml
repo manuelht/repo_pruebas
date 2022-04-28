@@ -5,8 +5,17 @@ on:
     branches:    
       - 'master'
 jobs:
-  check-actions:
-    name: Validate
+  check-changes:
+    name: Check git diff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+      - run: |
+         git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+  validate-actions:
+    name: Validate content
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
