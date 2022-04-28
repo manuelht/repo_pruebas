@@ -2,8 +2,8 @@
 name: On Push Run
 on: push
 jobs:
-  hello-world:
-    name: Hello world
+  pruebas:
+    name: Pruebas run script
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
