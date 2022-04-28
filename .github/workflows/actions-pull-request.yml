@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: '0'
       - run: |
-         git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+         git diff --name-status master
   validate-actions:
     name: Validate content
     runs-on: ubuntu-latest
