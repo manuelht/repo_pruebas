@@ -6,7 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-        with:
-          python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-      - run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+      - run: |
+         git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
