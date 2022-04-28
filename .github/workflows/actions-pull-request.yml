@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: '0'
       - run: |
-         git diff --name-status master
+         git diff --name-status master..${{ github.ref }}
   validate-actions:
     name: Validate content
     runs-on: ubuntu-latest
