@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: '0'
       - run: |
-        git branch -r
+          git branch -r
   check-changes2:
     name: Check git diff
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: '0'
       - run: |
-        git diff --name-status origin/master..${{ github.head_ref }}
+          git diff --name-status origin/master..${{ github.head_ref }}
   validate-actions:
     name: Validate content
     runs-on: ubuntu-latest
