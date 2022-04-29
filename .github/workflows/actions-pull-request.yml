@@ -9,11 +9,19 @@ jobs:
     name: Check git diff
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           fetch-depth: '0'
       - run: |
         git branch -r
+  check-changes2:
+    name: Check git diff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - run: |
         git diff --name-status origin/master..${{ github.head_ref }}
   validate-actions:
     name: Validate content
