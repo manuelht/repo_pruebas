@@ -14,6 +14,10 @@ jobs:
           fetch-depth: '0'
       - run: |
           git branch -r
+          echo github.head_ref: ${{ github.head_ref }}
+          echo github.ref_name: ${{ github.ref_name }}
+          echo github.base_ref: ${{ github.base_ref }}
+          echo github.ref: ${{ github.ref }}
   check-changes2:
     name: Check git diff
     runs-on: ubuntu-latest
