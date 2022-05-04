@@ -35,13 +35,13 @@ jobs:
           echo "Imprimir variable GIT_CHANGES_1"
           echo ${{ env.GIT_CHANGES_1 }}
           echo "Imprimir variable GIT_CHANGES_2"
-          echo ${{ jobs.steps.vars.GIT_CHANGES_2 }}
+          echo ${{ check-delete-files.steps.vars.GIT_CHANGES_2 }}
           echo "Imprimir variable GIT_CHANGES_2_2"
           echo ${{ steps.vars.GIT_CHANGES_2 }}
           echo "Imprimir variable GIT_CHANGES_3"
           echo ${{ env.GIT_CHANGES_3 }}
           echo "Imprimir variable GIT_CHANGES_4"
-          echo ${{ jobs.steps.vars.GIT_CHANGES_4 }}
+          echo ${{ check-delete-files.steps.vars.GIT_CHANGES_4 }}
   validate-actions:
     name: Validate content
     runs-on: ubuntu-latest
