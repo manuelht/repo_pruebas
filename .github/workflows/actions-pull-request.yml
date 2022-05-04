@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        id: vars
         with:
           fetch-depth: '0'
       - run: |
@@ -18,7 +19,10 @@ jobs:
           echo github.ref_name: ${{ github.ref_name }}
           echo github.base_ref: ${{ github.base_ref }}
           echo github.ref: ${{ github.ref }}
-          echo "GIT_CHANGES=git diff --name-status origin/master..origin/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "GIT_CHANGES_1=git diff --name-status origin/master..origin/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo ::set-output name=GIT_CHANGES_2::"git diff --name-status origin/master..origin/${{ github.head_ref }}"
+          echo "GIT_CHANGES_3=git diff --name-status origin/master..origin/feature/modify-test-pipeline" >> $GITHUB_ENV
+          echo ::set-output name=GIT_CHANGES_4::"git diff --name-status origin/master..origin/feature/modify-test-pipeline"
   check-changes2:
     name: Check git diff
     runs-on: ubuntu-latest
@@ -28,8 +32,16 @@ jobs:
           fetch-depth: '0'
       - run: |
           git diff --name-status origin/master..origin/${{ github.head_ref }}
-          echo "Imprimir variable GIT_CHANGES"
-          echo ${{ env.GIT_CHANGES }}
+          echo "Imprimir variable GIT_CHANGES_1"
+          echo ${{ env.GIT_CHANGES_1 }}
+          echo "Imprimir variable GIT_CHANGES_2"
+          echo ${{ jobs.steps.vars.GIT_CHANGES_2 }}
+          echo "Imprimir variable GIT_CHANGES_2_2"
+          echo ${{ steps.vars.GIT_CHANGES_2 }}
+          echo "Imprimir variable GIT_CHANGES_3"
+          echo ${{ env.GIT_CHANGES_3 }}
+          echo "Imprimir variable GIT_CHANGES_4"
+          echo ${{ jobs.steps.vars.GIT_CHANGES_4 }}
   validate-actions:
     name: Validate content
     runs-on: ubuntu-latest
