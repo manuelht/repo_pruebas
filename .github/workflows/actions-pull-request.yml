@@ -28,6 +28,7 @@ jobs:
           fetch-depth: '0'
       - run: |
           git diff --name-status origin/master..origin/${{ github.head_ref }}
+          echo "Imprimir variable GIT_CHANGES"
           echo ${{ env.GIT_CHANGES }}
   validate-actions:
     name: Validate content
