@@ -1,7 +1,7 @@
 ---
-name: "[CDC_TEMPLATE_NAME_FILE]"
+name: CDC_TEMPLATE_NAME_FILE
 about: Create template cdc
-title: ''
+title: "[CDC_TEMPLATE_NAME_FILE]"
 labels: ''
 assignees: ''
 
