@@ -1,5 +1,5 @@
 ---
-name: CDC_TEMPLATE_NAME_FILE
+name: Generate CDC Template
 about: Create template cdc
 title: "[CDC_TEMPLATE_NAME_FILE]"
 labels: ''
