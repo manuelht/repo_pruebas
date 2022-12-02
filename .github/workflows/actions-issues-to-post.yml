@@ -10,7 +10,7 @@ jobs:
       - uses: manuelht/action-issue2post@master
         with:
           branch: "master" # default to master
-          dir: "_requestIntegrationData" # default to _posts
+          dir: "cdc_templates" # default to _posts
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           created_at: ${{ github.event.issue.created_at }}
           title: ${{ github.event.issue.title }}
