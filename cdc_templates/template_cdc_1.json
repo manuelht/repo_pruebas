@@ -3,7 +3,7 @@
 # allowed values: INDOM_ZARA | INDOM_CHINA | ...
 # required: true
 ##
-schema: INDOM_ZARA
+schema: INDOM_CHINA
 table: ESTADO_SUBPEDIDO
 connections_file: connections.yml
 origin_connection: indom_zara_ir
