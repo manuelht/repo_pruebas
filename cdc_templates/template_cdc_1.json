@@ -1,8 +1,4 @@
-### 
-# Schema : definición
-# allowed values: INDOM_ZARA | INDOM_CHINA | ...
-# required: true
-##
+# 2022-11-05 12:55:00
 schema: INDOM_CHINA
 table: ESTADO_SUBPEDIDO
 connections_file: connections.yml
